@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+    {% block title %}
+    <title>Person Form</title>
+    {% endblock %}
+
+{% block content %}
+<h1> Person Form </h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{form|crispy}}
+    <input type="submit" class="btn btn-success">
+    <input type="reset" class="btn btn-warning">
+</form>
+
+{% endblock %}

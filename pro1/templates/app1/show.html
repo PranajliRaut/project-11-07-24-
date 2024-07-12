@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+    {% block title %}
+    <title>Show</title>
+    {% endblock %}
+
+{% block content %}
+<h1> Person Form</h1>
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <td>pid</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>Age</td>
+        <td>Mob_No</td>
+        <td>Gender</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.pid}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.mobile_no}}</td>
+        <td>{{i.gender}}</td>
+
+        <td>
+            <a href="/a1/uv/{{i.pid}}/"><button class="btn btn-success">UPDATE</button></a>
+            <a href="/a1/dv/{{i.pid}}/"><button class="btn btn-warning">DELETE</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
